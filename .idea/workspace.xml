@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9a172d2-3664-43ff-a6c2-a66121bc9d93" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/utils/JpaUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Score.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

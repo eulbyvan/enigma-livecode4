@@ -10,6 +10,10 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "home_score")
+    private @Getter @Setter Integer homeScore;
+    @Column(name = "away_score")
+    private @Getter @Setter Integer awayScore;
 
     @ManyToOne
     @JoinColumn(name = "home_id")
@@ -18,7 +22,4 @@ public class Game {
     @ManyToOne
     @JoinColumn(name = "away_id")
     private @Getter @Setter Team awayTeam;
-
-    private @Getter @Setter Integer homeScore;
-    private @Getter @Setter Integer awayScore;
 }
