@@ -11,7 +11,7 @@ import java.util.List;
 @NamedQuery(name = "getTeams", query = "SELECT c FROM Club c ORDER BY c.id")
 
 @Entity
-@Table(name = "m_team")
+@Table(name = "m_club")
 @ToString
 public class Club {
     @Id
