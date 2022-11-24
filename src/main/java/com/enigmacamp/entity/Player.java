@@ -11,6 +11,9 @@ import java.util.Date;
 @Entity
 @Table(name = "m_player")
 @ToString
+
+@NamedQuery(name = "getPlayers", query = "SELECT p FROM Player p ORDER BY p.id")
+
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,4 +32,9 @@ public class Player {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private @Getter @Setter @ToString.Exclude Team team;
+
+    @Column(name = "is_active")
+    private @Getter @Setter Boolean isActive;
+    @Column(name = "is_deleted")
+    private @Getter @Setter Boolean isDeleted;
 }

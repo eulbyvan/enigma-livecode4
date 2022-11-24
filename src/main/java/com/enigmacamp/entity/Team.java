@@ -17,12 +17,17 @@ public class Team {
     private @Getter @Setter String name;
     private @Getter @Setter String city;
 
+    @Column(name = "is_active")
+    private @Getter @Setter Boolean isActive;
+    @Column(name = "is_deleted")
+    private @Getter @Setter Boolean isDeleted;
+
     @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     private @Getter @Setter @ToString.Exclude List<Player> players;
 
     @OneToMany(mappedBy = "homeTeam", fetch = FetchType.LAZY)
-    private @Getter @Setter @ToString.Exclude List<Game> homes;
+    private @Getter @Setter @ToString.Exclude List<Match> homeMatches;
 
     @OneToMany(mappedBy = "awayTeam", fetch = FetchType.LAZY)
-    private @Getter @Setter @ToString.Exclude List<Game> aways;
+    private @Getter @Setter @ToString.Exclude List<Match> awayMatches;
 }
