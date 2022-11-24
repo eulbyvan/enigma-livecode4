@@ -8,12 +8,11 @@ import lombok.ToString;
 
 import java.util.Date;
 
+@NamedQuery(name = "getPlayers", query = "SELECT p FROM Player p ORDER BY p.id")
+
 @Entity
 @Table(name = "m_player")
 @ToString
-
-@NamedQuery(name = "getPlayers", query = "SELECT p FROM Player p ORDER BY p.id")
-
 public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +24,7 @@ public class Player {
     private @Getter @Setter Double height;
     private @Getter @Setter Position position;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "skill_id")
     private @Getter @Setter @ToString.Exclude Skill skill;
 
@@ -33,8 +32,8 @@ public class Player {
     @JoinColumn(name = "team_id")
     private @Getter @Setter @ToString.Exclude Team team;
 
-    @Column(name = "is_active")
-    private @Getter @Setter Boolean isActive;
-    @Column(name = "is_deleted")
-    private @Getter @Setter Boolean isDeleted;
+    @Column(name = "is_active", nullable = false)
+    private @Getter @Setter Boolean isActive = true;
+    @Column(name = "is_deleted", nullable = false)
+    private @Getter @Setter Boolean isDeleted = false;
 }

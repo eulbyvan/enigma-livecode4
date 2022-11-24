@@ -29,12 +29,12 @@ public class Skill {
     @Column(length = 10)
     private @Getter @Setter Integer determination;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "player_id")
     private @Getter @Setter Player player;
 
-    @Column(name = "is_active")
-    private @Getter @Setter Boolean isActive;
-    @Column(name = "is_deleted")
-    private @Getter @Setter Boolean isDeleted;
+    @Column(name = "is_active", nullable = false)
+    private @Getter @Setter Boolean isActive = true;
+    @Column(name = "is_deleted", nullable = false)
+    private @Getter @Setter Boolean isDeleted = false;
 }
