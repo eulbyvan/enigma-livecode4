@@ -17,10 +17,12 @@ public class Team {
     private @Getter @Setter String name;
     private @Getter @Setter String city;
 
-    @OneToMany
-    @JoinColumn(name = "player_id")
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     private @Getter @Setter @ToString.Exclude List<Player> players;
 
-    @OneToMany
-    private List<Game> games;
+    @OneToMany(mappedBy = "home", fetch = FetchType.LAZY)
+    private @Getter @Setter @ToString.Exclude List<Game> homes;
+
+    @OneToMany(mappedBy = "away", fetch = FetchType.LAZY)
+    private @Getter @Setter @ToString.Exclude List<Game> aways;
 }
