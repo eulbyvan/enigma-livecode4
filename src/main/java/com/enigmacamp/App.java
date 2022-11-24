@@ -29,44 +29,42 @@ public class App {
         MatchService matchService = new MatchService(matchRepo, clubRepo);
 
         //region test create team, skill and player
-        for (int i = 1; i <= 2; i++) {
-            Club club = new Club();
-            club.setName(String.format("club%d", i));
-            club.setCity(String.format("club%d", i));
-            
-            // add players
-            for (int j = 1; j <= 11; j++) {
-                int randomSkillPoint = (int) ((Math.random() * 10));
-
-                Skill skill = new Skill();
-                Player player = new Player();
-                player.setName(String.format("player%d_club%d", j, i));
-                player.setBirthDate(new Date());
-                player.setCitizenship("INA");
-                player.setHeight(1.70);
-                player.setPosition(Position.values()[(int) (Math.random() * 4)]);
-                skill.setAgility(randomSkillPoint);
-                skill.setShootPower(randomSkillPoint);
-                skill.setStrength(randomSkillPoint);
-                skill.setReflex(randomSkillPoint);
-                skill.setDribble(randomSkillPoint);
-                skill.setStamina(randomSkillPoint);
-                skill.setDetermination(randomSkillPoint);
-                skill.setPlayer(player);
-                player.setSkill(skill);
-                player.setClub(club);
-
-                club.getPlayers().add(player);
-
-                clubService.addClub(club);
-
-                playerRepo.create(player);
-            }
-        }
-
-
-//        clubRepo.getRow(1).getPlayers().forEach(System.out::println);
+//        for (int i = 1; i <= 2; i++) {
+//            Club club = new Club();
+//            club.setName(String.format("club%d", i));
+//            club.setCity(String.format("club%d", i));
 //
+//            // add players
+//            for (int j = 1; j <= 11; j++) {
+//                int randomSkillPoint = (int) ((Math.random() * 10));
+//
+//                Skill skill = new Skill();
+//                Player player = new Player();
+//                player.setName(String.format("player%d_club%d", j, i));
+//                player.setBirthDate(new Date());
+//                player.setCitizenship("INA");
+//                player.setHeight(1.70);
+//                player.setPosition(Position.values()[(int) (Math.random() * 4)]);
+//                skill.setAgility(randomSkillPoint);
+//                skill.setShootPower(randomSkillPoint);
+//                skill.setStrength(randomSkillPoint);
+//                skill.setReflex(randomSkillPoint);
+//                skill.setDribble(randomSkillPoint);
+//                skill.setStamina(randomSkillPoint);
+//                skill.setDetermination(randomSkillPoint);
+//                skill.setPlayer(player);
+//                player.setSkill(skill);
+//                player.setClub(club);
+//
+//                club.getPlayers().add(player);
+//
+//                clubService.addClub(club);
+//
+//                playerRepo.create(player);
+//            }
+//        }
+//
+////        clubRepo.getRow(1).getPlayers().forEach(System.out::println);
         //endregion
 
         //region add match

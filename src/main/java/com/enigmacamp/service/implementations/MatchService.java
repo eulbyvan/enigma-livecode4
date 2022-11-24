@@ -1,5 +1,6 @@
 package com.enigmacamp.service.implementations;
 
+import com.enigmacamp.entity.Goal;
 import com.enigmacamp.entity.Match;
 import com.enigmacamp.entity.Player;
 import com.enigmacamp.repo.implementation.ClubRepo;
