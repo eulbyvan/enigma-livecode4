@@ -2,13 +2,12 @@ package com.enigmacamp.repo.implementation;
 
 import com.enigmacamp.entity.Match;
 import com.enigmacamp.repo.IBaseRepo;
-import com.enigmacamp.repo.IMatchRepo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
-public class MatchRepo implements IBaseRepo <Match>, IMatchRepo {
+public class MatchRepo implements IBaseRepo <Match> {
     private EntityManager em;
 
     public MatchRepo(EntityManager em) {
@@ -56,10 +55,5 @@ public class MatchRepo implements IBaseRepo <Match>, IMatchRepo {
             System.err.println(e.getMessage());
             throw new RuntimeException(e);
         }
-    }
-
-    @Override
-    public void startMatch(Match match) {
-
     }
 }
