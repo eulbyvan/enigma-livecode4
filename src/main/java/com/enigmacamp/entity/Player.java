@@ -1,0 +1,28 @@
+package com.enigmacamp.entity;
+
+import com.enigmacamp.constants.Position;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.util.Date;
+
+@Entity
+@Table(name = "m_player")
+@ToString
+public class Player {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private @Getter @Setter Integer id;
+    private @Getter @Setter String name;
+    @Column(name = "birth_date")
+    private @Getter @Setter Date birthDate;
+    private @Getter @Setter String citizenship;
+    private @Getter @Setter Double height;
+    private @Getter @Setter Position position;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "team_id")
+    private @Getter @Setter @ToString.Exclude Team team;
+}
