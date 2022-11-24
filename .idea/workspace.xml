@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9a172d2-3664-43ff-a6c2-a66121bc9d93" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/repo/implementation/TeamRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/repo/IMatchRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/repo/implementation/MatchRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Match.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Skill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Skill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Club.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/repo/implementation/PlayerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/repo/implementation/PlayerRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/repo/implementation/TeamRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/repo/implementation/ClubRepo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -59,6 +61,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
@@ -105,5 +108,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

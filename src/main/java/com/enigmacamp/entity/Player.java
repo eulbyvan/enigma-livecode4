@@ -30,7 +30,7 @@ public class Player {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
-    private @Getter @Setter @ToString.Exclude Team team;
+    private @Getter @Setter @ToString.Exclude Club club;
 
     @Column(name = "is_active", nullable = false)
     private @Getter @Setter Boolean isActive = true;

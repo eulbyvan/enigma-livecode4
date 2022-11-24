@@ -1,24 +1,25 @@
 package com.enigmacamp.repo.implementation;
 
-import com.enigmacamp.entity.Team;
+import com.enigmacamp.entity.Match;
 import com.enigmacamp.repo.IBaseRepo;
+import com.enigmacamp.repo.IMatchRepo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
-public class TeamRepo implements IBaseRepo <Team> {
+public class MatchRepo implements IBaseRepo <Match>, IMatchRepo {
     private EntityManager em;
 
-    public TeamRepo(EntityManager em) {
+    public MatchRepo(EntityManager em) {
         this.em = em;
     }
 
     @Override
-    public void create(Team team) {
+    public void create(Match data) {
         try {
             em.getTransaction().begin();
-            em.persist(team);
+            em.persist(data);
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
@@ -28,13 +29,13 @@ public class TeamRepo implements IBaseRepo <Team> {
     }
 
     @Override
-    public Team getRow(int id) {
-        return em.find(Team.class, id);
+    public Match getRow(int id) {
+        return em.find(Match.class, id);
     }
 
     @Override
-    public List<Team> getRows(int page, int pageSize) {
-        TypedQuery<Team> query = em.createQuery("Team.getTeams", Team.class);
+    public List<Match> getRows(int page, int pageSize) {
+        TypedQuery<Match> query = em.createQuery("Match.getMatches", Match.class);
 
         int offset = (page - 1) * pageSize;
 
@@ -45,15 +46,20 @@ public class TeamRepo implements IBaseRepo <Team> {
     }
 
     @Override
-    public void update(Team team) {
+    public void update(Match data) {
         try {
             em.getTransaction().begin();
-            em.merge(team);
+            em.merge(data);
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
             System.err.println(e.getMessage());
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void startMatch(Match match) {
+
     }
 }

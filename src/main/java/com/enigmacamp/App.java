@@ -3,9 +3,9 @@ package com.enigmacamp;
 import com.enigmacamp.constants.Position;
 import com.enigmacamp.entity.Player;
 import com.enigmacamp.entity.Skill;
-import com.enigmacamp.entity.Team;
+import com.enigmacamp.entity.Club;
 import com.enigmacamp.repo.implementation.PlayerRepo;
-import com.enigmacamp.repo.implementation.TeamRepo;
+import com.enigmacamp.repo.implementation.ClubRepo;
 import com.enigmacamp.utils.JpaUtil;
 import jakarta.persistence.EntityManager;
 
@@ -14,17 +14,16 @@ import java.util.Date;
 public class App {
     public static void main(String[] args) {
         EntityManager em = JpaUtil.getEntityManager();
-        TeamRepo teamRepo = new TeamRepo(em);
+        ClubRepo clubRepo = new ClubRepo(em);
         PlayerRepo playerRepo = new PlayerRepo(em);
 
-        Team team = new Team();
+        //region test create team and player
+        Club club = new Club();
         Skill skill = new Skill();
         Player player = new Player();
 
-        team.setName("t1");
-        team.setCity("t1");
-
-        teamRepo.create(team);
+        club.setName("t1");
+        club.setCity("t1");
 
         player.setName("p1");
         player.setBirthDate(new Date());
@@ -40,10 +39,19 @@ public class App {
         skill.setDetermination(7);
         skill.setPlayer(player);
         player.setSkill(skill);
-        player.setTeam(team);
+        player.setClub(club);
+
+        club.getPlayers().add(player);
+
+        clubRepo.create(club);
 
         playerRepo.create(player);
 
+//        team.getPlayers().forEach(System.out::println);
+
+        clubRepo.getRow(1).getPlayers().forEach(System.out::println);
+
         em.close();
+        //endregion
     }
 }

@@ -1,24 +1,24 @@
 package com.enigmacamp.repo.implementation;
 
-import com.enigmacamp.entity.Player;
+import com.enigmacamp.entity.Club;
 import com.enigmacamp.repo.IBaseRepo;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
-public class PlayerRepo implements IBaseRepo<Player> {
+public class ClubRepo implements IBaseRepo <Club> {
     private EntityManager em;
 
-    public PlayerRepo(EntityManager em) {
+    public ClubRepo(EntityManager em) {
         this.em = em;
     }
 
     @Override
-    public void create(Player data) {
+    public void create(Club club) {
         try {
             em.getTransaction().begin();
-            em.persist(data);
+            em.persist(club);
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();
@@ -28,13 +28,13 @@ public class PlayerRepo implements IBaseRepo<Player> {
     }
 
     @Override
-    public Player getRow(int id) {
-        return em.find(Player.class, id);
+    public Club getRow(int id) {
+        return em.find(Club.class, id);
     }
 
     @Override
-    public List<Player> getRows(int page, int pageSize) {
-        TypedQuery<Player> query = em.createQuery("Player.getPlayers", Player.class);
+    public List<Club> getRows(int page, int pageSize) {
+        TypedQuery<Club> query = em.createQuery("Team.getTeams", Club.class);
 
         int offset = (page - 1) * pageSize;
 
@@ -45,10 +45,10 @@ public class PlayerRepo implements IBaseRepo<Player> {
     }
 
     @Override
-    public void update(Player data) {
+    public void update(Club club) {
         try {
             em.getTransaction().begin();
-            em.merge(data);
+            em.merge(club);
             em.getTransaction().commit();
         } catch (Exception e) {
             em.getTransaction().rollback();

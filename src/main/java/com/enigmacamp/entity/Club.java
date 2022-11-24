@@ -8,12 +8,12 @@ import lombok.ToString;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(name = "getTeams", query = "SELECT t FROM Team t ORDER BY t.id")
+@NamedQuery(name = "getTeams", query = "SELECT c FROM Club c ORDER BY c.id")
 
 @Entity
 @Table(name = "m_team")
 @ToString
-public class Team {
+public class Club {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private @Getter @Setter Integer id;
@@ -25,12 +25,12 @@ public class Team {
     @Column(name = "is_deleted", nullable = false)
     private @Getter @Setter Boolean isDeleted = false;
 
-    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "club", fetch = FetchType.LAZY)
     private @Getter @Setter @ToString.Exclude List<Player> players = new ArrayList<>();
 
-    @OneToMany(mappedBy = "homeTeam", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "homeClub", fetch = FetchType.LAZY)
     private @Getter @Setter @ToString.Exclude List<Match> homeMatches = new ArrayList<>();
 
-    @OneToMany(mappedBy = "awayTeam", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "awayClub", fetch = FetchType.LAZY)
     private @Getter @Setter @ToString.Exclude List<Match> awayMatches = new ArrayList<>();
 }
