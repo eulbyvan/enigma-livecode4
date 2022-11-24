@@ -22,7 +22,13 @@ public class Player {
     private @Getter @Setter Date birthDate;
     private @Getter @Setter String citizenship;
     private @Getter @Setter Double height;
+
+    @Enumerated(EnumType.STRING)
     private @Getter @Setter Position position;
+
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "goal_id")
+    private @Getter @Setter Goal goal;
 
     @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "skill_id")

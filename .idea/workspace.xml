@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9a172d2-3664-43ff-a6c2-a66121bc9d93" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Goal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/enigmacamp/service/implementations/MatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/enigmacamp/service/implementations/MatchService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,8 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "com.haulmont.jpb.viewMode"
   }
 }]]></component>
   <component name="RunManager">
