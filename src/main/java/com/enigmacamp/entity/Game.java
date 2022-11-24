@@ -13,12 +13,12 @@ public class Game {
 
     @ManyToOne
     @JoinColumn(name = "home_id")
-    private @Getter @Setter Team home;
+    private @Getter @Setter Team homeTeam;
 
     @ManyToOne
     @JoinColumn(name = "away_id")
-    private @Getter @Setter Team away;
+    private @Getter @Setter Team awayTeam;
 
-    @OneToOne
-    private @Getter @Setter Score score;
+    private @Getter @Setter Integer homeScore;
+    private @Getter @Setter Integer awayScore;
 }

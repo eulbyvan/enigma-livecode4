@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Entity
 @Table(name = "m_skill")
 @ToString
@@ -26,4 +28,8 @@ public class Skill {
     private @Getter @Setter Integer stamina;
     @Column(length = 10)
     private @Getter @Setter Integer determination;
+
+    @OneToOne
+    @JoinColumn(name = "player_id")
+    private @Getter @Setter Player player;
 }

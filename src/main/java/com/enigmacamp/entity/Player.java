@@ -22,6 +22,10 @@ public class Player {
     private @Getter @Setter Double height;
     private @Getter @Setter Position position;
 
+    @OneToOne
+    @JoinColumn(name = "skill_id")
+    private @Getter @Setter @ToString.Exclude Skill skill;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private @Getter @Setter @ToString.Exclude Team team;

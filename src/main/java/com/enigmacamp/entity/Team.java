@@ -20,9 +20,9 @@ public class Team {
     @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     private @Getter @Setter @ToString.Exclude List<Player> players;
 
-    @OneToMany(mappedBy = "home", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "homeTeam", fetch = FetchType.LAZY)
     private @Getter @Setter @ToString.Exclude List<Game> homes;
 
-    @OneToMany(mappedBy = "away", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "awayTeam", fetch = FetchType.LAZY)
     private @Getter @Setter @ToString.Exclude List<Game> aways;
 }
